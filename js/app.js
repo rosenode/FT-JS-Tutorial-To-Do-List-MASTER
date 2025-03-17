@@ -19,3 +19,15 @@ function addToDo(toDo) {
     const position = "beforeend"
     list.insertAdjacentHTML(position, text);
 }
+
+const input = document.getElementById("input");
+
+document.addEventListener("keyup",function(event){
+    if(event.keyCode == 13){
+        const toDo = input.value;
+        if(toDo){
+            addToDo(toDo);
+        }
+        input.value = "";
+    }
+});
