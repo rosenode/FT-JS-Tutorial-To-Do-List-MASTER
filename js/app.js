@@ -26,8 +26,37 @@ document.addEventListener("keyup",function(event){
     if(event.keyCode == 13){
         const toDo = input.value;
         if(toDo){
-            addToDo(toDo);
+            addToDo(toDo,IdleDeadline, fakse, false);
+            LIST.push(
+                {
+                    name: toDo,
+                    id: id,
+                    done: false,
+                    trash: false
+                }
+            );
+            input.value = "";
+            id++;
         }
-        input.value = "";
     }
 });
+
+let LIST = [];
+let id = 0;
+
+LIST = [{},{}, ...];
+
+LIST[0] ->
+{
+    name: "Drink Coffee",
+    id: 0,
+    done: false,
+    trash: false
+}
+
+LIST [1] -> {
+    name: "Workout",
+    id: 1,
+    done: true,
+    trash: false
+}
